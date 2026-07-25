@@ -2,13 +2,15 @@
 
 This repository contains my work for Coursework 2, where I build and evaluate several models for financial time‑series forecasting. The project is organised into three main notebooks:
 
-- Q1: Baseline Linear Regression using lag features
+- Q1_folder/Q1.ipynb: Baseline Linear Regression using lag features
 
-- Q2: Simple Multi‑Layer Perceptron (MLP) neural network
+- Q2_folder/Q2.ipynb: Simple Multi‑Layer Perceptron (MLP) neural network
 
-- Q3: Advanced model (e.g., Random Forest, LSTM, or ARIMA depending on instructions)
+- Q3_folder/Q3.ipynb: Advanced model: Random Forest
 
-## Repository Structure
+All notebooks use shared helper functions stored in py/functions.py.
+
+The dataset used throughout the coursework is located in the project root as finance_economics_dataset.csv.
 
 ## Summary of Work
 
@@ -31,10 +33,34 @@ This repository contains my work for Coursework 2, where I build and evaluate se
 - Evaluates improvements
 - Final comparison across all models
 
+## Project Structure
+Coursework-2---Finance/
+- py/
+  - functions.py
+  - __init__.py
+
+- Q1_folder/
+  - Q1.ipynb
+
+- Q2_folder/
+  - Q2.ipynb
+
+- Q3_folder/
+  - Q3.ipynb
+│
+- dependencies.txt
+- finance_economics_dataset.csv
+- README.md
+
+
 ## How to Run
 
 Install dependencies:
 pip install -r dependencies.txt
+
+Because each notebook lives inside its own folder, the first cell includes a small path adjustment so Python can find the shared py/functions.py module:
+import sys
+sys.path.append("C:\\Users\\Paris\\Coursework-2---Finance")
 
 Then open any notebook:
 jupyter notebook
