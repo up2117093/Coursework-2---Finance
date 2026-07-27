@@ -10,8 +10,10 @@ def basic_clean(df):
     df = df.sort_values('Date')
     return df
 
-def train_test_split_time(df, test_size=0.2):
-    split = int(len(df) * (1 - test_size))
-    train = df.iloc[:split]
-    test = df.iloc[split:]
-    return train, test
+def train_test_split_time(X, y, test_size=0.2):
+    split = int(len(X) * (1 - test_size))
+    X_train = X.iloc[:split]
+    X_test = X.iloc[split:]
+    y_train = y.iloc[:split]
+    y_test = y.iloc[split:]
+    return X_train, X_test, y_train, y_test
