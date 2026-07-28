@@ -59,8 +59,9 @@ Install dependencies:
 pip install -r dependencies.txt
 
 Because each notebook lives inside its own folder, the first cell includes a small path adjustment so Python can find the shared py/functions.py module:
-import sys
-sys.path.append("C:\\Users\\Paris\\Coursework-2---Finance")
+import sys, os
+project_root = os.path.abspath(os.path.join(os.getcwd(), ".."))
+sys.path.append(project_root)
 
 Then open any notebook:
 jupyter notebook
